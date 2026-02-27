@@ -2,7 +2,7 @@
   "name": "Quip — Party Word Game",
   "short_name": "Quip",
   "description": "One word. That's all you get. Guess 10 words in 15 attempts.",
-  "start_url": "/",
+  "start_url": "https://chardrizard.github.io/quip/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#111114",
