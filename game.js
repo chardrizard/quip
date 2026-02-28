@@ -7,21 +7,44 @@ let allWords  = [];
 let gameWords = [];
 let guessed   = [];
 let attempts  = MAX_ATTEMPTS;
+let currentLang = 'en'; // 'en' or 'nl'
 
 // ── BOOT ──────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('words.json')
+  loadWords('en');
+});
+
+function loadWords(lang) {
+  const file = lang === 'nl' ? 'words-nl.json' : 'words.json';
+  fetch(file)
     .then(r => r.json())
     .then(data => {
       allWords = data.words;
+      currentLang = lang;
+      updateLangToggle();
       showScreen('screen-start');
     })
     .catch(() => {
-      // Fallback if fetch fails (e.g. opening as file:// locally)
       allWords = FALLBACK_WORDS;
+      currentLang = 'en';
+      updateLangToggle();
       showScreen('screen-start');
     });
-});
+}
+
+// ── LANGUAGE TOGGLE ───────────────────────────────────────────────────────────
+function switchLang(lang) {
+  if (lang === currentLang) return;
+  loadWords(lang);
+}
+
+function updateLangToggle() {
+  const btnEn = document.getElementById('lang-en');
+  const btnNl = document.getElementById('lang-nl');
+  if (!btnEn || !btnNl) return;
+  btnEn.classList.toggle('lang-active', currentLang === 'en');
+  btnNl.classList.toggle('lang-active', currentLang === 'nl');
+}
 
 // ── SCREEN ROUTING ────────────────────────────────────────────────────────────
 function showScreen(id) {
