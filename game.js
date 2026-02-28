@@ -2,19 +2,99 @@
 const MAX_ATTEMPTS = 15;
 const WORD_COUNT   = 10;
 
+// ── I18N ──────────────────────────────────────────────────────────────────────
+const I18N = {
+  en: {
+    headline:      'One word.<br><em>That\'s all<br>you get.</em>',
+    tagline:       'Give one hint. Your team guesses. Beat the limit.',
+    rule1:         '<strong>One hint word</strong> — describe the word on screen without saying it',
+    rule2:         '<strong>10 words</strong> to guess — tap a word when your team gets it right',
+    rule3:         '<strong>15 attempts max</strong> — the counter goes down on every guess, right or wrong',
+    rule4:         'Guess <strong>all 10 words</strong> within 15 attempts to win',
+    startBtn:      'Start Game →',
+    shuffleBtn:    'Shuffle new words',
+    attemptsLabel: 'Attempts Left',
+    tapToCount:    'Tap to count',
+    lastOne:       'Last one!',
+    out:           'Out!',
+    newGameBtn:    '🔄 New game',
+    homeBtn:       '🏠 Home',
+    confirmRestart:'Start a new game with fresh words?',
+    winHeadline:   'You Quipped!',
+    winSub:        'All 10 words guessed. Brilliant teamwork.',
+    statWords:     'Words',
+    statUsed:      'Used',
+    statSpare:     'Spare',
+    playAgainBtn:  'Play Again →',
+    backHomeBtn:   'Back to Home',
+    loseHeadline:  'Out of Attempts',
+    loseSub:       'You got <strong id="lose-guessed">—</strong> out of 10. So close.',
+    statGuessed:   'Guessed',
+    statLeft:      'Left',
+    tryAgainBtn:   'Try Again →',
+    backHomeBtn2:  'Back to Home',
+  },
+  nl: {
+    headline:      'Eén woord.<br><em>Meer krijg<br>je niet.</em>',
+    tagline:       'Geef één hint. Je team raadt. Versla de limiet.',
+    rule1:         '<strong>Eén hintwoord</strong> — beschrijf het woord op het scherm zonder het te zeggen',
+    rule2:         '<strong>10 woorden</strong> raden — tik op een woord als je team het goed heeft',
+    rule3:         '<strong>Max 15 pogingen</strong> — de teller gaat omlaag bij elke gok, goed of fout',
+    rule4:         'Raad <strong>alle 10 woorden</strong> binnen 15 pogingen om te winnen',
+    startBtn:      'Start Spel →',
+    shuffleBtn:    'Nieuwe woorden',
+    attemptsLabel: 'Pogingen Over',
+    tapToCount:    'Tik om te tellen',
+    lastOne:       'Laatste!',
+    out:           'Op!',
+    newGameBtn:    '🔄 Nieuw spel',
+    homeBtn:       '🏠 Home',
+    confirmRestart:'Nieuw spel starten met nieuwe woorden?',
+    winHeadline:   'Gequipt!',
+    winSub:        'Alle 10 woorden geraden. Geweldig teamwerk.',
+    statWords:     'Woorden',
+    statUsed:      'Gebruikt',
+    statSpare:     'Over',
+    playAgainBtn:  'Opnieuw Spelen →',
+    backHomeBtn:   'Terug naar Home',
+    loseHeadline:  'Pogingen Op',
+    loseSub:       'Je had <strong id="lose-guessed">—</strong> van de 10. Bijna!',
+    statGuessed:   'Geraden',
+    statLeft:      'Over',
+    tryAgainBtn:   'Probeer Opnieuw →',
+    backHomeBtn2:  'Terug naar Home',
+  }
+};
+
+function t(key) {
+  return I18N[currentLang]?.[key] ?? I18N.en[key] ?? key;
+}
+
+function applyI18n() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const val = t(key);
+    if (val !== undefined) el.innerHTML = val;
+  });
+  // Update page title
+  document.title = currentLang === 'nl'
+    ? 'Quip — Woordspel voor Feestjes'
+    : 'Quip — Party Word Game';
+}
+
 // ── STATE ─────────────────────────────────────────────────────────────────────
 let allWords  = [];
 let gameWords = [];
 let guessed   = [];
 let attempts  = MAX_ATTEMPTS;
-let currentLang = 'en'; // 'en' or 'nl'
+let currentLang = 'en';
 
 // ── BOOT ──────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  loadWords('en');
+  loadWords('en', true);
 });
 
-function loadWords(lang) {
+function loadWords(lang, isInitial = false) {
   const file = lang === 'nl' ? 'words-nl.json' : 'words.json';
   fetch(file)
     .then(r => r.json())
@@ -22,20 +102,22 @@ function loadWords(lang) {
       allWords = data.words;
       currentLang = lang;
       updateLangToggle();
-      showScreen('screen-start');
+      applyI18n();
+      if (isInitial) showScreen('screen-start');
     })
     .catch(() => {
       allWords = FALLBACK_WORDS;
       currentLang = 'en';
       updateLangToggle();
-      showScreen('screen-start');
+      applyI18n();
+      if (isInitial) showScreen('screen-start');
     });
 }
 
 // ── LANGUAGE TOGGLE ───────────────────────────────────────────────────────────
 function switchLang(lang) {
   if (lang === currentLang) return;
-  loadWords(lang);
+  loadWords(lang, false);
 }
 
 function updateLangToggle() {
@@ -71,7 +153,7 @@ function startGame() {
 }
 
 function confirmRestart() {
-  if (confirm('Start a new game with fresh words?')) startGame();
+  if (confirm(t('confirmRestart'))) startGame();
 }
 
 // ── WORD GRID ─────────────────────────────────────────────────────────────────
@@ -98,7 +180,6 @@ function toggleWord(index) {
   card.classList.toggle('guessed', guessed[index]);
 
   if (guessed[index]) {
-    // Correct guess — also consumes one attempt
     if (navigator.vibrate) navigator.vibrate(30);
     if (attempts > 0) {
       attempts--;
@@ -126,7 +207,7 @@ function updateAttemptsUI() {
   const danger = attempts <= 4;
 
   ftr.textContent   = attempts;
-  badge.textContent = attempts === 0 ? 'Out!' : attempts === 1 ? 'Last one!' : 'Tap to count';
+  badge.textContent = attempts === 0 ? t('out') : attempts === 1 ? t('lastOne') : t('tapToCount');
   btn.classList.toggle('danger', danger);
   updateProgressDots();
 }
@@ -180,10 +261,14 @@ function showWin(total) {
   document.getElementById('win-attempts').textContent = MAX_ATTEMPTS - attempts;
   document.getElementById('win-left').textContent     = attempts;
   if (navigator.vibrate) navigator.vibrate([40, 20, 60, 20, 80]);
+  applyI18n();
   showScreen('screen-win');
 }
 
 function showLose(total) {
+  // Apply i18n first so the template renders with correct language
+  applyI18n();
+  // Then fill in the dynamic values
   document.getElementById('lose-guessed').textContent    = total;
   document.getElementById('lose-words-stat').textContent = total;
   if (navigator.vibrate) navigator.vibrate([80, 40, 80]);
