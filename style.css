@@ -132,9 +132,51 @@ html, body {
   line-height: 1.6;
   letter-spacing: 0.01em;
   max-width: 280px;
-  margin-bottom: 36px;
+  margin-bottom: 28px;
 }
 
+/* ── LANGUAGE TOGGLE ───────────────────────────────────────────────────────── */
+.lang-toggle {
+  display: flex;
+  gap: 0;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-full);
+  padding: 3px;
+  margin-bottom: 24px;
+  max-width: 280px;
+  width: 100%;
+}
+
+.lang-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--r-full);
+  background: transparent;
+  color: var(--ink-3);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease, transform 90ms ease;
+  white-space: nowrap;
+}
+
+.lang-btn:active {
+  transform: scale(0.96);
+}
+
+.lang-btn.lang-active {
+  background: var(--accent);
+  color: var(--accent-dark);
+}
+
+/* ── START RULES ───────────────────────────────────────────────────────────── */
 .start-rules {
   width: 100%;
   max-width: 340px;
