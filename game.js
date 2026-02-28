@@ -4,65 +4,65 @@ const WORD_COUNT   = 10;
 
 // ── I18N ──────────────────────────────────────────────────────────────────────
 const I18N = {
-  en: {
-    headline:      'One word.<br><em>That\'s all<br>you get.</em>',
-    tagline:       'Give one hint. Your team guesses. Beat the limit.',
-    rule1:         '<strong>One hint word</strong> — describe the word on screen without saying it',
-    rule2:         '<strong>10 words</strong> to guess — tap a word when your team gets it right',
-    rule3:         '<strong>15 attempts max</strong> — the counter goes down on every guess, right or wrong',
-    rule4:         'Guess <strong>all 10 words</strong> within 15 attempts to win',
-    startBtn:      'Start Game →',
-    shuffleBtn:    'Shuffle new words',
-    attemptsLabel: 'Attempts Left',
-    tapToCount:    'Tap to count',
-    lastOne:       'Last one!',
-    out:           'Out!',
-    newGameBtn:    '🔄 New game',
-    homeBtn:       '🏠 Home',
-    confirmRestart:'Start a new game with fresh words?',
-    winHeadline:   'You Quipped!',
-    winSub:        'All 10 words guessed. Brilliant teamwork.',
-    statWords:     'Words',
-    statUsed:      'Used',
-    statSpare:     'Spare',
-    playAgainBtn:  'Play Again →',
-    backHomeBtn:   'Back to Home',
-    loseHeadline:  'Out of Attempts',
-    loseSub:       'You got <strong id="lose-guessed">—</strong> out of 10. So close.',
-    statGuessed:   'Guessed',
-    statLeft:      'Left',
-    tryAgainBtn:   'Try Again →',
-    backHomeBtn2:  'Back to Home',
+  "en": {
+    "headline": "One word.<br><em>That’s all<br>you get.</em>",
+    "tagline": "Give one hint. Your team guesses. Beat the limit.",
+    "rule1": "<strong>One hint word</strong> — describe the word on screen without saying it",
+    "rule2": "<strong>10 words</strong> to guess — tap a word when your team gets it right",
+    "rule3": "<strong>15 attempts max</strong> — the counter goes down on every guess, right or wrong",
+    "rule4": "Guess <strong>all 10 words</strong> within 15 attempts to win",
+    "startBtn": "Start Game →",
+    "shuffleBtn": "Shuffle new words",
+    "attemptsLabel": "Attempts Left",
+    "tapToCount": "Tap to count",
+    "lastOne": "Last one!",
+    "out": "Out!",
+    "newGameBtn": "🔄 New game",
+    "homeBtn": "🏠 Home",
+    "confirmRestart": "Start a new game with fresh words?",
+    "winHeadline": "You Quipped!",
+    "winSub": "All 10 words guessed. Brilliant teamwork.",
+    "statWords": "Words",
+    "statUsed": "Used",
+    "statSpare": "Spare",
+    "playAgainBtn": "Play Again →",
+    "backHomeBtn": "Back to Home",
+    "loseHeadline": "Out of Attempts",
+    "loseSub": "You got <strong id=\"lose-guessed\">—</strong> out of 10. So close.",
+    "statGuessed": "Guessed",
+    "statLeft": "Left",
+    "tryAgainBtn": "Try Again →",
+    "backHomeBtn2": "Back to Home"
   },
-  nl: {
-    headline:      'Eén woord.<br><em>Meer krijg<br>je niet.</em>',
-    tagline:       'Geef één hint. Je team raadt. Versla de limiet.',
-    rule1:         '<strong>Eén hintwoord</strong> — beschrijf het woord op het scherm zonder het te zeggen',
-    rule2:         '<strong>10 woorden</strong> raden — tik op een woord als je team het goed heeft',
-    rule3:         '<strong>Max 15 pogingen</strong> — de teller gaat omlaag bij elke gok, goed of fout',
-    rule4:         'Raad <strong>alle 10 woorden</strong> binnen 15 pogingen om te winnen',
-    startBtn:      'Start Spel →',
-    shuffleBtn:    'Nieuwe woorden',
-    attemptsLabel: 'Pogingen Over',
-    tapToCount:    'Tik om te tellen',
-    lastOne:       'Laatste!',
-    out:           'Op!',
-    newGameBtn:    '🔄 Nieuw spel',
-    homeBtn:       '🏠 Home',
-    confirmRestart:'Nieuw spel starten met nieuwe woorden?',
-    winHeadline:   'Gequipt!',
-    winSub:        'Alle 10 woorden geraden. Geweldig teamwerk.',
-    statWords:     'Woorden',
-    statUsed:      'Gebruikt',
-    statSpare:     'Over',
-    playAgainBtn:  'Opnieuw Spelen →',
-    backHomeBtn:   'Terug naar Home',
-    loseHeadline:  'Pogingen Op',
-    loseSub:       'Je had <strong id="lose-guessed">—</strong> van de 10. Bijna!',
-    statGuessed:   'Geraden',
-    statLeft:      'Over',
-    tryAgainBtn:   'Probeer Opnieuw →',
-    backHomeBtn2:  'Terug naar Home',
+  "nl": {
+    "headline": "Één woord.<br><em>Meer krijg<br>je niet.</em>",
+    "tagline": "Geef één hint. Je team raadt. Versla de limiet.",
+    "rule1": "<strong>Één hintwoord</strong> — beschrijf het woord op het scherm zonder het te zeggen",
+    "rule2": "<strong>10 woorden</strong> raden — tik op een woord als je team het goed heeft",
+    "rule3": "<strong>Max 15 pogingen</strong> — de teller gaat omlaag bij elke gok, goed of fout",
+    "rule4": "Raad <strong>alle 10 woorden</strong> binnen 15 pogingen om te winnen",
+    "startBtn": "Start Spel →",
+    "shuffleBtn": "Nieuwe woorden",
+    "attemptsLabel": "Pogingen Over",
+    "tapToCount": "Tik om te tellen",
+    "lastOne": "Laatste!",
+    "out": "Op!",
+    "newGameBtn": "🔄 Nieuw spel",
+    "homeBtn": "🏠 Home",
+    "confirmRestart": "Nieuw spel starten met nieuwe woorden?",
+    "winHeadline": "Gequipt!",
+    "winSub": "Alle 10 woorden geraden. Geweldig teamwerk.",
+    "statWords": "Woorden",
+    "statUsed": "Gebruikt",
+    "statSpare": "Over",
+    "playAgainBtn": "Opnieuw Spelen →",
+    "backHomeBtn": "Terug naar Home",
+    "loseHeadline": "Pogingen Op",
+    "loseSub": "Je had <strong id=\"lose-guessed\">—</strong> van de 10. Bijna!",
+    "statGuessed": "Geraden",
+    "statLeft": "Over",
+    "tryAgainBtn": "Probeer Opnieuw →",
+    "backHomeBtn2": "Terug naar Home"
   }
 };
 
@@ -76,10 +76,9 @@ function applyI18n() {
     const val = t(key);
     if (val !== undefined) el.innerHTML = val;
   });
-  // Update page title
   document.title = currentLang === 'nl'
-    ? 'Quip — Woordspel voor Feestjes'
-    : 'Quip — Party Word Game';
+    ? 'Quip \u2014 Woordspel voor Feestjes'
+    : 'Quip \u2014 Party Word Game';
 }
 
 // ── STATE ─────────────────────────────────────────────────────────────────────
@@ -96,18 +95,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function loadWords(lang, isInitial = false) {
   const file = lang === 'nl' ? 'words-nl.json' : 'words.json';
+  const fallback = lang === 'nl' ? FALLBACK_WORDS_NL : FALLBACK_WORDS;
+
   fetch(file)
-    .then(r => r.json())
+    .then(r => {
+      if (!r.ok) throw new Error('fetch failed');
+      return r.json();
+    })
     .then(data => {
-      allWords = data.words;
+      allWords    = data.words;
       currentLang = lang;
       updateLangToggle();
       applyI18n();
       if (isInitial) showScreen('screen-start');
     })
     .catch(() => {
-      allWords = FALLBACK_WORDS;
-      currentLang = 'en';
+      allWords    = fallback;
+      currentLang = lang;
       updateLangToggle();
       applyI18n();
       if (isInitial) showScreen('screen-start');
@@ -132,7 +136,7 @@ function updateLangToggle() {
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   const next = document.getElementById(id);
-  void next.offsetWidth; // force reflow for animation reset
+  void next.offsetWidth;
   next.classList.add('active');
 }
 
@@ -167,7 +171,7 @@ function buildWordGrid() {
     card.innerHTML = `
       <div class="word-number">${String(i + 1).padStart(2, '0')}</div>
       <div class="word-text">${word}</div>
-      <div class="word-check">✓</div>
+      <div class="word-check">&#10003;</div>
     `;
     card.addEventListener('click', () => toggleWord(i));
     grid.appendChild(card);
@@ -266,9 +270,7 @@ function showWin(total) {
 }
 
 function showLose(total) {
-  // Apply i18n first so the template renders with correct language
   applyI18n();
-  // Then fill in the dynamic values
   document.getElementById('lose-guessed').textContent    = total;
   document.getElementById('lose-words-stat').textContent = total;
   if (navigator.vibrate) navigator.vibrate([80, 40, 80]);
@@ -285,12 +287,78 @@ function shuffle(arr) {
   return a;
 }
 
-// ── FALLBACK WORDS (if words.json can't load) ─────────────────────────────────
+// ── FALLBACK WORDS EN ─────────────────────────────────────────────────────────
 const FALLBACK_WORDS = [
   "Sushi","Yoga","Karaoke","Flamingo","Volcano","Robot","Pirate","Ninja",
-  "Origami","Hammock","Bungee Jumping","Quicksand","Unicorn","Brain Freeze",
-  "Jet Lag","Deja vu","Ghost Hunter","Bermuda Triangle","Black Hole","Capybara",
+  "Origami","Hammock","Quicksand","Unicorn","Brain Freeze","Capybara",
   "Roller Coaster","Sloth","Procrastination","Surfing","Star Wars","Harry Potter",
   "Minecraft","TikTok","Emoji","WiFi","Ghosting","Meme","Astronaut","Blender",
   "Trampoline","Paragliding","Chameleon","Culture Shock","Clown","Stuntman"
+];
+
+// ── FALLBACK WORDS NL ─────────────────────────────────────────────────────────
+const FALLBACK_WORDS_NL = [
+  "Fiets","Kaas","Stroopwafel","Windmolen","Tulp","Klompen","Hagelslag","Polder",
+  "Gracht","Gezellig","Oliebollen","Kroket","Stamppot","Frikandel","Pannenkoek","Hutspot",
+  "Erwtensoep","Bitterballen","Rookworst","Poffertjes","Ontbijt","Middageten","Avondeten","Brood",
+  "Boter","Melk","Koffie","Thee","Water","Bier","Wijn","Sap",
+  "Suiker","Zout","Peper","Rijst","Aardappel","Groente","Fruit","Vlees",
+  "Kip","Vis","Ei","Soep","Salade","Taart","Koekje","Chocolade",
+  "Ijs","Friet","Huis","Woning","Kamer","Keuken","Badkamer","Slaapkamer",
+  "Woonkamer","Tuin","Balkon","Deur","Raam","Trap","Muur","Vloer",
+  "Plafond","Dak","Schoorsteen","Kelder","Zolder","Garage","Sleutel","Tafel",
+  "Stoel","Bank","Bed","Kast","Spiegel","Lamp","Klok","Gordijn",
+  "Tapijt","Kussen","Deken","Handdoek","Zeep","Tandenborstel","Tandpasta","Douche",
+  "Kraan","Wasmachine","Stofzuiger","Koelkast","Magnetron","Oven","Fornuis","Vaatwasser",
+  "Bord","Glas","Kopje","Mes","Vork","Lepel","Pan","Schaal",
+  "Werk","Kantoor","Baas","Collega","Vergadering","Salaris","Vakantie","Pauze",
+  "Computer","Bureau","Printer","Telefoon","Sollicitatie","Contract","Overwerk","Pensioen",
+  "School","Leraar","Leerling","Student","Huiswerk","Examen","Diploma","Boek",
+  "Schrift","Pen","Potlood","Gum","Liniaal","Rugzak","Bril","Woordenboek",
+  "Bibliotheek","Hoofd","Haar","Gezicht","Oog","Oor","Neus","Mond",
+  "Tand","Lip","Kin","Wang","Voorhoofd","Nek","Schouder","Arm",
+  "Elleboog","Pols","Hand","Vinger","Duim","Nagel","Borst","Buik",
+  "Rug","Heup","Been","Knie","Enkel","Voet","Teen","Hart",
+  "Longen","Bloed","Bot","Spier","Huid","Ziekenhuis","Dokter","Apotheek",
+  "Medicijn","Recept","Verband","Koorts","Griep","Verkoudheid","Hoofdpijn","Buikpijn",
+  "Allergie","Pleister","Hoesten","Niezen","Jas","Broek","Shirt","Trui",
+  "Jurk","Rok","Sokken","Schoenen","Laarzen","Sjaal","Muts","Handschoenen",
+  "Riem","Rits","Knoop","Zak","Mouw","Kraag","Ondergoed","Pyjama",
+  "Badjas","Pantoffels","Paraplu","Hond","Kat","Konijn","Hamster","Vogel",
+  "Papegaai","Paard","Koe","Varken","Schaap","Geit","Eend","Gans",
+  "Zwaan","Muis","Rat","Spin","Vlinder","Bij","Wesp","Mug",
+  "Vlieg","Mier","Slang","Kikker","Schildpad","Aap","Olifant","Leeuw",
+  "Tijger","Beer","Wolf","Vos","Hert","Haas","Egel","Uil",
+  "Adelaar","Dolfijn","Walvis","Haai","Krab","Zon","Maan","Ster",
+  "Wolk","Regen","Sneeuw","Hagel","Wind","Storm","Onweer","Bliksem",
+  "Donder","Regenboog","Mist","Vorst","Boom","Bloem","Gras","Blad",
+  "Tak","Wortel","Struik","Bos","Berg","Dal","Rivier","Meer",
+  "Zee","Strand","Eiland","Woestijn","Vulkaan","Waterval","Grot","Klif",
+  "Heuvel","Veld","Weide","Moeras","Auto","Bus","Trein","Tram",
+  "Metro","Vliegtuig","Boot","Scooter","Motor","Vrachtwagen","Ambulance","Brandweer",
+  "Politie","Taxi","Helikopter","Zeilboot","Veerboot","Station","Halte","Luchthaven",
+  "Parkeerplaats","Snelweg","Rotonde","Verkeerslicht","Zebrapad","Brug","Tunnel","Stad",
+  "Dorp","Straat","Plein","Park","Markt","Winkel","Supermarkt","Bakker",
+  "Slager","Restaurant","Café","Hotel","Museum","Bioscoop","Theater","Kerk",
+  "Moskee","Stadhuis","Postkantoor","Brandweerkazerne","Politiebureau","Gevangenis","Flat","Wolkenkrabber",
+  "Kasteel","Paleis","Toren","Molen","Boerderij","Schuur","Fontein","Standbeeld",
+  "Monument","Speeltuin","Voetbal","Tennis","Zwemmen","Hardlopen","Fietsen","Schaatsen",
+  "Skiën","Surfen","Dansen","Boksen","Volleybal","Hockey","Basketbal","Badminton",
+  "Gymnastiek","Wedstrijd","Kampioen","Medaille","Scheidsrechter","Schilderen","Tekenen","Fotografie",
+  "Tuinieren","Koken","Bakken","Breien","Naaien","Puzzel","Bordspel","Kaarten",
+  "Schaken","Dammen","Gitaar","Piano","Viool","Drums","Fluit","Concert",
+  "Festival","Feest","Verjaardag","Bruiloft","Kerst","Sinterklaas","Koningsdag","Carnaval",
+  "Blij","Verdrietig","Boos","Bang","Moe","Honger","Dorst","Ziek",
+  "Gezond","Zenuwachtig","Trots","Jaloers","Eenzaam","Verliefd","Teleurgesteld","Opgewonden",
+  "Verveeld","Geschrokken","Dankbaar","Schuldig","Moeder","Vader","Zoon","Dochter",
+  "Broer","Zus","Opa","Oma","Oom","Tante","Neef","Nicht",
+  "Buurman","Buurvrouw","Vriend","Vriendin","Tweeling","Baby","Kleinkind","Stiefmoeder",
+  "Geld","Pinpas","Contant","Korting","Aanbieding","Kassa","Bon","Prijs",
+  "Rekening","Fooi","Belasting","Hypotheek","Huur","Verzekering","Boodschappen","Portemonnee",
+  "Munt","Briefje","Spaarrekening","Schuld","Smartphone","Laptop","Tablet","Koptelefoon",
+  "Oplader","Wachtwoord","Wifi","Internet","Scherm","Toetsenbord","Camera","Selfie",
+  "Bericht","Koffer","Paspoort","Visum","Instapkaart","Douane","Bagage","Landkaart",
+  "Reisgids","Camping","Huisje","Terras","Snijplank","Vergiet","Garde","Spatel",
+  "Schort","Deegroller","Theedoek","Aanrecht","Maandag","Dinsdag","Woensdag","Donderdag",
+  "Vrijdag","Zaterdag","Zondag","Lente"
 ];
