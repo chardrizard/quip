@@ -50,8 +50,8 @@
     <div class="start-wordmark">Quip</div>
   </div>
 
-  <h1 class="start-headline">One word.<br><em>That's all<br>you get.</em></h1>
-  <p class="start-tagline">Give one hint. Your team guesses. Beat the limit.</p>
+  <h1 class="start-headline" data-i18n="headline">One word.<br><em>That's all<br>you get.</em></h1>
+  <p class="start-tagline" data-i18n="tagline">Give one hint. Your team guesses. Beat the limit.</p>
 
   <!-- Language toggle -->
   <div class="lang-toggle">
@@ -63,24 +63,24 @@
   <div class="start-rules">
     <div class="rule-row">
       <div class="rule-icon">💬</div>
-      <div class="rule-text"><strong>One hint word</strong> — describe the word on screen without saying it</div>
+      <div class="rule-text" data-i18n="rule1"><strong>One hint word</strong> — describe the word on screen without saying it</div>
     </div>
     <div class="rule-row">
       <div class="rule-icon">🎯</div>
-      <div class="rule-text"><strong>10 words</strong> to guess — tap a word when your team gets it right</div>
+      <div class="rule-text" data-i18n="rule2"><strong>10 words</strong> to guess — tap a word when your team gets it right</div>
     </div>
     <div class="rule-row">
       <div class="rule-icon">🔢</div>
-      <div class="rule-text"><strong>15 attempts max</strong> — the counter goes down on every guess, right or wrong</div>
+      <div class="rule-text" data-i18n="rule3"><strong>15 attempts max</strong> — the counter goes down on every guess, right or wrong</div>
     </div>
     <div class="rule-row">
       <div class="rule-icon">🏆</div>
-      <div class="rule-text">Guess <strong>all 10 words</strong> within 15 attempts to win</div>
+      <div class="rule-text" data-i18n="rule4">Guess <strong>all 10 words</strong> within 15 attempts to win</div>
     </div>
   </div>
 
-  <button class="btn btn-primary" onclick="startGame()">Start Game →</button>
-  <button class="btn btn-ghost" style="margin-top:4px" onclick="startGame()">Shuffle new words</button>
+  <button class="btn btn-primary" onclick="startGame()" data-i18n="startBtn">Start Game →</button>
+  <button class="btn btn-ghost" style="margin-top:4px" onclick="startGame()" data-i18n="shuffleBtn">Shuffle new words</button>
 
 </div>
 
@@ -99,7 +99,7 @@
     <!-- Attempt counter — main interaction -->
     <button class="attempt-btn" id="attempt-btn" onclick="useAttempt()">
       <div class="attempt-btn-left">
-        <div class="attempt-btn-label">Attempts Left</div>
+        <div class="attempt-btn-label" data-i18n="attemptsLabel">Attempts Left</div>
         <div class="attempt-btn-value" id="footer-attempts">15</div>
       </div>
       <div class="attempt-btn-badge" id="attempt-badge">Tap to count</div>
@@ -110,8 +110,8 @@
 
     <!-- Utility actions -->
     <div class="footer-actions">
-      <button class="btn-sm-ghost" onclick="confirmRestart()">🔄 New game</button>
-      <button class="btn-sm-ghost" onclick="showStart()">🏠 Home</button>
+      <button class="btn-sm-ghost" onclick="confirmRestart()" data-i18n="newGameBtn">🔄 New game</button>
+      <button class="btn-sm-ghost" onclick="showStart()" data-i18n="homeBtn">🏠 Home</button>
     </div>
 
   </div>
@@ -123,25 +123,25 @@
 ════════════════════════════════════════════════ -->
 <div class="screen" id="screen-win">
   <div class="result-q-badge">Q</div>
-  <h2 class="result-headline" style="color:var(--accent)">You Quipped!</h2>
-  <p class="result-sub">All 10 words guessed. Brilliant teamwork.</p>
+  <h2 class="result-headline" style="color:var(--accent)" data-i18n="winHeadline">You Quipped!</h2>
+  <p class="result-sub" data-i18n="winSub">All 10 words guessed. Brilliant teamwork.</p>
   <div class="result-stats">
     <div class="stat-card">
       <div class="stat-value" id="win-words">10</div>
-      <div class="stat-label">Words</div>
+      <div class="stat-label" data-i18n="statWords">Words</div>
     </div>
     <div class="stat-card">
       <div class="stat-value" id="win-attempts">—</div>
-      <div class="stat-label">Used</div>
+      <div class="stat-label" data-i18n="statUsed">Used</div>
     </div>
     <div class="stat-card">
       <div class="stat-value" id="win-left">—</div>
-      <div class="stat-label">Spare</div>
+      <div class="stat-label" data-i18n="statSpare">Spare</div>
     </div>
   </div>
   <div class="btn-stack">
-    <button class="btn btn-primary" onclick="startGame()">Play Again →</button>
-    <button class="btn btn-ghost" onclick="showStart()">Back to Home</button>
+    <button class="btn btn-primary" onclick="startGame()" data-i18n="playAgainBtn">Play Again →</button>
+    <button class="btn btn-ghost" onclick="showStart()" data-i18n="backHomeBtn">Back to Home</button>
   </div>
 </div>
 
@@ -151,21 +151,21 @@
 ════════════════════════════════════════════════ -->
 <div class="screen" id="screen-lose">
   <div class="result-icon">💀</div>
-  <h2 class="result-headline" style="color:var(--danger)">Out of Attempts</h2>
-  <p class="result-sub">You got <strong id="lose-guessed">—</strong> out of 10. So close.</p>
+  <h2 class="result-headline" style="color:var(--danger)" data-i18n="loseHeadline">Out of Attempts</h2>
+  <p class="result-sub" data-i18n="loseSub">You got <strong id="lose-guessed">—</strong> out of 10. So close.</p>
   <div class="result-stats">
     <div class="stat-card">
       <div class="stat-value" id="lose-words-stat">—</div>
-      <div class="stat-label">Guessed</div>
+      <div class="stat-label" data-i18n="statGuessed">Guessed</div>
     </div>
     <div class="stat-card">
       <div class="stat-value" style="color:var(--danger)">0</div>
-      <div class="stat-label">Left</div>
+      <div class="stat-label" data-i18n="statLeft">Left</div>
     </div>
   </div>
   <div class="btn-stack">
-    <button class="btn btn-primary" onclick="startGame()">Try Again →</button>
-    <button class="btn btn-ghost" onclick="showStart()">Back to Home</button>
+    <button class="btn btn-primary" onclick="startGame()" data-i18n="tryAgainBtn">Try Again →</button>
+    <button class="btn btn-ghost" onclick="showStart()" data-i18n="backHomeBtn2">Back to Home</button>
   </div>
 </div>
 
