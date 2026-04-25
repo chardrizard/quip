@@ -91,7 +91,13 @@ let currentLang = 'en';
 // ── BOOT ──────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   loadWords('en', true);
+  registerServiceWorker();
 });
+
+function registerServiceWorker() {
+  if (!('serviceWorker' in navigator)) return;
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
 
 function loadWords(lang, isInitial = false) {
   const file = lang === 'nl' ? 'words-nl.json' : 'words.json';
